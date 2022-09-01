@@ -1,1 +1,0 @@
-# Waste-Sorter-using-Images
