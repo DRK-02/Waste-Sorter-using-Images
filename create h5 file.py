@@ -1,13 +1,4 @@
-#------------------------------------------------------------------------------
-# The famous data set:cats vs dogs is used in this example. The data set contains
-# 12500 dog pictures and 12500 cat pictures. All the images are shuffled randomly
-# and 20000 images are used to train, 5000 images are used to test. The images
-# can be resized to different sizes but the size of the .hdf5 file differs very
-# far depending on the size of the images. The file is 1.14G when the size of the
-# images is (128,128) and 4.57G for (256,256), 18.3G for (512,512).
-#------------------------------------------------------------------------------
-
-########################## first part: prepare data ###########################
+#========================== Part 1: Prepare Data ==========================
 from random import shuffle
 import glob
 
@@ -15,12 +6,12 @@ shuffle_data = True  # shuffle the addresses
 
 hdf5_path = 'C:/Users/Admin/Desktop/Dhruv/Beta/M/m/BTech. Engineering/AI Club/Waste-Sorter-using-Images/images.hdf5'  # file path for the created .hdf5 file
 
-cat_dog_train_path = 'C:/Users/Admin/Desktop/Dhruv/Beta/M/m/BTech. Engineering/AI Club/Waste-Sorter-using-Images/Images/*.jpg' # the original data path
+dataset_path = 'C:/Users/Admin/Desktop/Dhruv/Beta/M/m/BTech. Engineering/AI Club/Waste-Sorter-using-Images/Images/*.jpg' # the original data path
 
 # get all the image paths
-addrs = glob.glob(cat_dog_train_path)
+addrs = glob.glob(dataset_path)
 
-# label the data as 0=cat, 1=dog
+# label the data as 0 = paper, 1 = glass, plastic = 2, metal = 3
 labels = []
 
 for addr in addrs:
@@ -45,14 +36,14 @@ if shuffle_data:
                                # "addrs" then contains all the shuffled paths and
                                # "labels" contains all the shuffled labels.
 
-# Divide the data into 80% for train and 20% for test
+# Divide the data into 75% for train and 25% for test
 train_addrs = addrs[0:int(0.75*len(addrs))]
 train_labels = labels[0:int(0.75*len(labels))]
 
 test_addrs = addrs[int(0.75*len(addrs)):]
 test_labels = labels[int(0.75*len(labels)):]
 
-##################### second part: create the h5py object #####################
+#========================== Part 2: Create the h5py Object ==========================
 import numpy as np
 import h5py
 
@@ -74,7 +65,7 @@ f["train_labels"][...] = train_labels
 f.create_dataset("test_labels", (len(test_addrs),), np.uint8)
 f["test_labels"][...] = test_labels
 
-######################## third part: write the images #########################
+#========================== Part 3: Write the Images #########################
 import cv2
 
 # loop over train paths
@@ -102,3 +93,5 @@ for i in range(len(test_addrs)):
     f["test_img"][i, ...] = img[None]
 
 f.close()
+
+print('hdf5 file successfully created!!!')
