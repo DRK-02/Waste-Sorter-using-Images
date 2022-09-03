@@ -6,7 +6,7 @@ shuffle_data = True  # shuffle the addresses
 
 hdf5_path = 'C:/Users/Admin/Desktop/Dhruv/Beta/M/m/BTech. Engineering/AI Club/Waste-Sorter-using-Images/images.hdf5'  # file path for the created .hdf5 file
 
-dataset_path = 'C:/Users/Admin/Desktop/Dhruv/Beta/M/m/BTech. Engineering/AI Club/Waste-Sorter-using-Images/Images/*.jpg' # the original data path
+dataset_path = 'C:/Users/Admin/Desktop/Dhruv/Beta/M/m/BTech. Engineering/AI Club/Waste-Sorter-using-Images/Enhanced Dataset/*.jpg' # the original data path
 
 # get all the image paths
 addrs = glob.glob(dataset_path)
