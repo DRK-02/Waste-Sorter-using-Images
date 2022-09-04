@@ -1,4 +1,5 @@
 # Waste-Sorter-using-Images
+
 ![png-clipart-reuse-reduce-recycle-logo-environmental-management-system-waste-management-natural-environment-recycle-bin-leaf-logo](https://user-images.githubusercontent.com/97865229/188336555-97e41217-3d26-47f5-9d13-1a368d9792d7.png)
 
 ## What it does
@@ -15,8 +16,8 @@ The data was split in a ratio of 3:1 for the training and validation sets respec
 
 ## Challenges we ran into
 Since it is a CNN model, images are loaded and as such, it takes a lot of training time. The only way to reduce this is to integrate it with an extremely good processor and a GPU, i.e., Graphics Processing Unit, or a TPU, i.e., Tensor Processing Unit.
-![db7c24c3-ebcd-413a-9ee0-4b95b3882b0f](https://user-images.githubusercontent.com/97865229/188336594-4ee0f744-5e0a-4754-8387-47ad8a1eef83.png)
 
+![db7c24c3-ebcd-413a-9ee0-4b95b3882b0f](https://user-images.githubusercontent.com/97865229/188336594-4ee0f744-5e0a-4754-8387-47ad8a1eef83.png)
 
 ## What's next for Waste Sorter Using Images
 This software must get a bigger dataset to learn from with more categories for the waste types. It must also be used on a processor with extremely high speed to train the model.
