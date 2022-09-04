@@ -14,7 +14,7 @@ While building the model we made multiple layers. The first few layers enhance t
 
 Next was dense layers. These layers are responsible for classifying the image. There were multiple dense layers of 1024, 512, 256, 128, and 4 decision trees in each one separately. Like in the earlier layers, the data coming out of each of the dense layers was also normalized.
 
-![image](https://user-images.githubusercontent.com/97865229/188336643-f2c05b09-9c76-48e9-9a03-cb2401b73a57.png)
+![download](https://user-images.githubusercontent.com/97865229/188336683-819234e9-8b52-4e06-a5dc-308310b18a80.png)
 
 The data was split in a ratio of 3:1 for the training and validation sets respectively. Even though it was restricted to 40 epochs in the code, upon analyzing and studying the training graph, the model can yield an accuracy of up to 85-90%.
 
